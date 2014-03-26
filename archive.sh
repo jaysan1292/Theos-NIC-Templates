@@ -1,24 +1,14 @@
 #! /bin/bash
 
-rm -rf Archived\ Templates
+ARCHIVE_FOLDER="Archived Templates"
 
-mkdir Archived\ Templates
+rm -rf "$ARCHIVE_FOLDER"
 
-cd Archived\ Templates
+mkdir "$ARCHIVE_FOLDER"
 
-~/Developer/Jailbreak/theos/bin/nicify.pl ../CCLoader_Plugin.nic
+cd "$ARCHIVE_FOLDER"
 
-~/Developer/Jailbreak/theos/bin/nicify.pl ../Flipswitch_Toggle.nic
+for i in ../*.nic; do
+	$THEOS/bin/nicify.pl $i
+done
 
-~/Developer/Jailbreak/theos/bin/nicify.pl ../Notification_Center_Widget.nic
-
-~/Developer/Jailbreak/theos/bin/nicify.pl ../Preference_Bundle.nic
-
-~/Developer/Jailbreak/theos/bin/nicify.pl ../XPC_Service.nic
-
-~/Developer/Jailbreak/theos/bin/nicify.pl ../Tweak.nic
-
-~/Developer/Jailbreak/theos/bin/nicify.pl ../Command_Line_Interface.nic
-
-~/Developer/Jailbreak/theos/bin/nicify.pl ../Dynamic_Library.nic
-cd ..
