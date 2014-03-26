@@ -1,8 +1,7 @@
 ARCHS = armv7 armv7s arm64
-
 TARGET = iphone:clang:latest:@@DEPLOYMENT_TARGET@@
-
-THEOS_BUILD_DIR = Packages
+THEOS_BUILD_DIR = Build
+THEOS_PACKAGE_DIR_NAME = Packages
 
 include @@THEOS@@/makefiles/common.mk
 
